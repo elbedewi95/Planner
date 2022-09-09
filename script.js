@@ -46,18 +46,20 @@ function addEvent(event){
     
             if (clicked.getAttribute("class") === "textHere"){
                inputText = document.createElement("textarea");
+               inputText.setAttribute("class","text-input");
                inputText.style.width="800px";
                 clicked.appendChild(inputText);
                 
             }
 }
 // saving to local storage
-function saveEvent(event){
-    if(event.target.getAttribute("class") === "btn"){
-        console.log("clicked save");
-   var rowID = event.target.parent("tr").getAttribute("id");
-   console.log(rowID);
-}}
+var btns = [$("#btn1"),$("#btn2"),$("#btn3"),$("#btn4"),$("#btn5"),$("#btn6"),$("#btn7"),$("#btn8"),$("#btn9")]
+for (let index = 0; index < btns.length; index++) {
+    btns[index].on("click", function(){
+        console.log("clicked save")
+    })
+    
+}
 document.addEventListener("click",addEvent);
 document.addEventListener("click",saveEvent);
 
